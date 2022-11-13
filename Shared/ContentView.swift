@@ -8,9 +8,67 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var messageText: String = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Spacer()
+                .frame(maxHeight: 10)
+            
+            if messageText != "" {
+                Text(messageText)
+                    .padding()
+                    .background(.blue)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                messageText = "attempting to make a sandwich"
+                Task {
+                    messageText = await NetworkCalls.makeSandwich()
+                }
+            }, label: {
+                Text("Make A Sandwich")
+                    .padding()
+                    .background(.green)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+            })
+            
+            Spacer()
+            
+            Button(action: {
+                messageText = "attempting to refill machine"
+                Task {
+                    messageText = await NetworkCalls.refillContainers()
+                }
+            }, label: {
+                Text("Refill Machine")
+                    .padding()
+                    .background(.red)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+            })
+            
+            Spacer()
+            
+            Button(action: {
+                Task {
+                    messageText = await NetworkCalls.testRequests()
+                }
+            }, label: {
+                Text("TEST BUTTON")
+                    .padding()
+                    .background(.cyan)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+            })
+            
+            Spacer()
+        }
     }
 }
 

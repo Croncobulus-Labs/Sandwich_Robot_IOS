@@ -17,6 +17,8 @@
 		4FAF28E9292061E3005DB151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF28BF292061CA005DB151 /* ContentView.swift */; };
 		4FAF28EA292061E3005DB151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF28C0292061E2005DB151 /* Assets.xcassets */; };
 		4FAF28EB292061E3005DB151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF28C0292061E2005DB151 /* Assets.xcassets */; };
+		4FAF28FB292064CB005DB151 /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF28FA292064CB005DB151 /* NetworkCalls.swift */; };
+		4FAF28FC292064CB005DB151 /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF28FA292064CB005DB151 /* NetworkCalls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		4FAF28DE292061E2005DB151 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAF28E2292061E2005DB151 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4FAF28E4292061E2005DB151 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		4FAF28FA292064CB005DB151 /* NetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCalls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 				4FAF28BE292061CA005DB151 /* sandwichApp.swift */,
 				4FAF28BF292061CA005DB151 /* ContentView.swift */,
 				4FAF28C0292061E2005DB151 /* Assets.xcassets */,
+				4FAF28FA292064CB005DB151 /* NetworkCalls.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -301,6 +305,7 @@
 			files = (
 				4FAF28E8292061E3005DB151 /* ContentView.swift in Sources */,
 				4FAF28E6292061E2005DB151 /* sandwichApp.swift in Sources */,
+				4FAF28FB292064CB005DB151 /* NetworkCalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +315,7 @@
 			files = (
 				4FAF28E9292061E3005DB151 /* ContentView.swift in Sources */,
 				4FAF28E7292061E2005DB151 /* sandwichApp.swift in Sources */,
+				4FAF28FC292064CB005DB151 /* NetworkCalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
