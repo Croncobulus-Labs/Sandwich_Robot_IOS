@@ -115,12 +115,55 @@ class NetworkCalls {
             return "Unable to make refill request"
         }
         
-        let httpResponse = resp as? HTTPURLResponse
+        var httpResponse = resp as? HTTPURLResponse
         if httpResponse?.statusCode != 200 {
             return "refill request failed"
         }
         
+        guard let url2 = URL(string: URLBASE + "/open") else {
+            return "Error creating url for opening door during refil"
+        }
+        
+        request = URLRequest(url: url2)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+        
+        do {
+            (_, resp) = try await URLSession.shared.data(for: request)
+        } catch {
+            return "Unable to make open door request for refill"
+        }
+        
+        httpResponse = resp as? HTTPURLResponse
+        if httpResponse?.statusCode != 200 {
+            return "refil request failed - unable to open door"
+        }
+        
         return "refill request succeeded"
     }
-
+    
+    static func doneRefill() async -> String {
+        guard let url = URL(string: URLBASE + "/close") else {
+            return "Error creating close url - refill"
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+        
+        var resp: URLResponse
+        
+        do {
+            (_, resp) = try await URLSession.shared.data(for: request)
+        } catch {
+            return "Unable to make end refill close request"
+        }
+        
+        let httpResponse = resp as? HTTPURLResponse
+        if httpResponse?.statusCode != 200 {
+            return "close request failed"
+        }
+        
+        return "done refill request succeeded"
+    }
 }

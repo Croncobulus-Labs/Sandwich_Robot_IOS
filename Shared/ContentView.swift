@@ -56,13 +56,14 @@ struct ContentView: View {
             Spacer()
             
             Button(action: {
+                messageText = "attempting to close the door"
                 Task {
-                    messageText = await NetworkCalls.testRequests()
+                    messageText = await NetworkCalls.doneRefill()
                 }
             }, label: {
-                Text("TEST BUTTON")
+                Text("Finish Refill")
                     .padding()
-                    .background(.cyan)
+                    .background(.yellow)
                     .cornerRadius(15)
                     .foregroundColor(.white)
             })
